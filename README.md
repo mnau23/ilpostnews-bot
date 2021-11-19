@@ -1,10 +1,11 @@
-# Il Post Bot
+# Il Post News Bot
 
-> A Telegram simple bot which lets you receive the latest news
+> A simple Telegram bot that lets you receive the latest news
 > from [Il Post](https://www.ilpost.it/) directly on your phone.
 
 It is essentially a single script that parses [Il Post](https://www.ilpost.it/)
-webpage and sends all the available articles (including *flashes* and *bits*). <br/>
+webpage and sends you all the available articles found
+(including *flashes* and *bits* news). <br/>
 *(Currently not)* Running at [@ilpostnews_bot](https://t.me/ilpostnews_bot)
 
 
