@@ -30,11 +30,11 @@ def check(text):
 def create_embedded(selection):
     a_dict = {}
 
-    # create dict as {title: href}
+    # Create dict as {title: href}
     for s in selection:
         a_dict[s['title']] = s['href']
 
-    # rewrite dict value as embedded link
+    # Rewrite dict value as embedded link
     for key in a_dict:
         emb_link = '<a href="' + a_dict[key] + '">link</a>'
         a_dict[key] = emb_link
@@ -82,7 +82,7 @@ def help_msg(message):
     bot.send_message(message.chat.id, response, disable_web_page_preview=True, parse_mode='HTML')
 
 
-# Get flash news
+# Get bits news
 @bot.message_handler(commands=['bits'])
 def bits(message):
     emoji = '--- --- ---'
@@ -110,11 +110,13 @@ def flashes(message):
 
 # Get latest news
 @bot.message_handler(commands=['latest'])
+# Ask for a number of articles
 def question(message):
     quest = bot.send_message(message.chat.id, 'How many articles do you want to view?')
     bot.register_next_step_handler(quest, latest)
 
 
+# Send articles
 def latest(message):
     if not check(message.text):
         bot.send_message(message.chat.id, 'Not a number! Please send me a valid integer number.')
